@@ -1,5 +1,5 @@
 /** 1. Tag it as client component */
-// "use client"
+"use client"
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc"
 
 /** 2. Import your components */
