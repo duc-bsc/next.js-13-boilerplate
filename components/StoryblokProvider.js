@@ -7,6 +7,7 @@ import Page from "./Page"
 import Teaser from "./Teaser"
 import Grid from "./Grid"
 import Feature from "./Feature"
+import Section from "./Section"
 
 /** 3. Initialize it as usual */
 storyblokInit({
@@ -19,6 +20,7 @@ storyblokInit({
     teaser: Teaser,
     page: Page,
     grid: Grid,
+    section: Section,
     feature: Feature,
   },
 })
