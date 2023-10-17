@@ -9,7 +9,7 @@ const Feature = ({ blok }) => (
 
     {blok.photoImage && (
       <figure className="relative w-100 h-[200px]">
-        <Image src={blok.photoImage.filename} fill />
+        <Image src={blok.photoImage.filename} fill style={{ objectFit: "cover" }} />
       </figure>
     )}
   </div>
