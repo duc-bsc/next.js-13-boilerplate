@@ -4,27 +4,16 @@ import StoryblokStory from "@storyblok/react/story"
 export default async function Page({ params: { slug = "home" } }) {
   // console.log("props", props)
 
-  try {
-    const { data } = await fetchData(slug)
+  const { data } = await fetchData(slug)
 
-    return (
-      <div>
-        <StoryblokStory story={data.story} />
-      </div>
-    )
-  } catch (error) {
-    const { data } = await fetchData(slug, { version: "draft" })
-    return (
-      <div>
-        <StoryblokStory story={data.story} />
-      </div>
-    )
-  }
+  return (
+    <div>
+      <StoryblokStory story={data.story} />
+    </div>
+  )
 }
 
-export async function fetchData(slug, sbParams = { version: "published" }) {
-  // let sbParams = { version }
-
+export async function fetchData(slug, sbParams) {
   const storyblokApi = getStoryblokApi()
-  return storyblokApi.get(`cdn/stories/${slug}`, sbParams)
+  return storyblokApi.get(`cdn/stories/${slug}`, { ...sbParams, version: process.env.API_VERSION || "draft" })
 }
