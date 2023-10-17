@@ -8,7 +8,7 @@ const Feature = ({ blok }) => (
     <div dangerouslySetInnerHTML={{ __html: renderRichText(blok.body) }}></div>
 
     {blok.photoImage && (
-      <figure className="relative w-100 h-[200px]">
+      <figure className="relative h-0 w-100 pb-[60%]">
         <Image src={blok.photoImage.filename} fill style={{ objectFit: "cover" }} />
       </figure>
     )}
