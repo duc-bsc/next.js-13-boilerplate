@@ -4,7 +4,7 @@ import Image from "next/image"
 
 const Feature = ({ blok }) => (
   <div className="flex flex-col gap-3 px-3 column feature" {...storyblokEditable(blok)}>
-    {blok.name}
+    <h4 className="title">{blok.name}</h4>
     <div style={{ whiteSpace: "balance" }} dangerouslySetInnerHTML={{ __html: renderRichText(blok.body) }}></div>
 
     {blok.photoImage?.filename && (

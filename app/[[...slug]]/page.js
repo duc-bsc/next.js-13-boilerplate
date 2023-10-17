@@ -9,10 +9,10 @@ export default async function Page({ params: { slug = "home" } }) {
 
     const { data: globalConfig } = await fetchData("config")
 
-    console.log("globalConfig", globalConfig)
     return (
       <>
-        <StoryblokStory story={data.story} />
+        <StoryblokStory story={globalConfig.story} />
+        {data.story.slug !== "config" && <StoryblokStory story={data.story} />}
       </>
     )
   } catch (error) {
