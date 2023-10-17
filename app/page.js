@@ -12,7 +12,7 @@ export default async function Home() {
 }
 
 export async function fetchData() {
-  let sbParams = { version: "draft" }
+  let sbParams = { version: "published" }
 
   const storyblokApi = getStoryblokApi()
   return storyblokApi.get(`cdn/stories/home`, sbParams)
