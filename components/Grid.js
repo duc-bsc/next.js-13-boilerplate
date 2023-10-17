@@ -1,13 +1,13 @@
-import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
+import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc"
 
 const Grid = ({ blok }) => {
   return (
-    <div className="grid grid-cols-3" {...storyblokEditable(blok)}>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3" {...storyblokEditable(blok)}>
       {blok.columns.map((nestedBlok) => (
         <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default Grid;
+export default Grid
