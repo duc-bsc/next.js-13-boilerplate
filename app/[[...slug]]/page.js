@@ -6,10 +6,12 @@ export default async function Page({ params: { slug = "home" } }) {
 
   const { data } = await fetchData(slug)
 
+  const { data: globalConfig } = await fetchData("config")
+  console.log("globalConfig", globalConfig)
   return (
-    <div>
+    <>
       <StoryblokStory story={data.story} />
-    </div>
+    </>
   )
 }
 

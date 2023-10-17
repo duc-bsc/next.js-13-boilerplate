@@ -1,6 +1,6 @@
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc"
 
-const Grid = ({ blok }) => {
+const Section = ({ blok }) => {
   return (
     <div className="container py-8 mx-auto" {...storyblokEditable(blok)}>
       {blok.blocks.map((nestedBlok) => (
@@ -10,4 +10,4 @@ const Grid = ({ blok }) => {
   )
 }
 
-export default Grid
+export default Section
