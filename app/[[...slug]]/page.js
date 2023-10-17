@@ -4,15 +4,24 @@ import StoryblokStory from "@storyblok/react/story"
 export default async function Page({ params: { slug = "home" } }) {
   // console.log("props", props)
 
-  const { data } = await fetchData(slug)
+  try {
+    const { data } = await fetchData(slug)
 
-  const { data: globalConfig } = await fetchData("config")
-  console.log("globalConfig", globalConfig)
-  return (
-    <>
-      <StoryblokStory story={data.story} />
-    </>
-  )
+    const { data: globalConfig } = await fetchData("config")
+
+    console.log("globalConfig", globalConfig)
+    return (
+      <>
+        <StoryblokStory story={data.story} />
+      </>
+    )
+  } catch (error) {
+    return (
+      <main>
+        <p>404 - Page not found!</p>
+      </main>
+    )
+  }
 }
 
 export async function fetchData(slug, sbParams) {
